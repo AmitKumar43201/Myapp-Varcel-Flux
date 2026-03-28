@@ -1,6 +1,7 @@
 import React, {useEffect}  from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppContext } from '../context/AppContext'
+import { Link } from 'react-router-dom'
 
 function NavBar() {
   const {user, clearUser} = useAppContext()
@@ -21,16 +22,16 @@ function NavBar() {
     <div>
       <nav className='flex bg-amber-50 flex-row h-[7vh] items-center justify-between px-[400px]' >
         <div>
-          <a href='/' ><p className='text-lg font-bold' >Varcel-Flux</p></a>
+          <Link to='/' ><p className='text-lg font-bold' >Varcel-Flux</p></Link>
         </div>
-        <div><a href='/project' >Projects</a></div>
+        <div><Link to='/project' >Projects</Link></div>
         <div className='flex flex-row items-center justify-evenly gap-2.5' >
           {user ? (
              <button onClick={handleLogout} >Logout</button>
           ):(
           <>  
-          <a href='/signup' >Signup</a>
-          <a href='/login' >Login</a>
+          <Link to='/signup' >Signup</Link>
+          <Link to='/login' >Login</Link>
           </>
           )}
         </div>
