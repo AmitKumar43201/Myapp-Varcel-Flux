@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 import { useAppContext } from "../context/AppContext";
 
-const apiUrl = import.meta.env.VITE_BACKEND_SOCKET_URI;
+const apiUrl = import.meta.env.VITE_BACKEND_URI;
 
 export default function LogViewer({ email }) {
   const [logs, setLogs] = useState([]);
